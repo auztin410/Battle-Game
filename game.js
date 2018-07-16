@@ -2,7 +2,7 @@
 var inquirer = require("inquirer");
 
 // Creating the character layout for stats and the functions for combat.
-function Character(name, profession, gender, experience, strength, agility, intellect, stamina, potion){
+function Character(name, profession, gender, experience, strength, agility, intellect, stamina, potion, gold){
     this.name= name;
     this.profession= profession;
     this.gender= gender;
@@ -12,7 +12,8 @@ function Character(name, profession, gender, experience, strength, agility, inte
     this.intellect= intellect;
     this.stamina= stamina;
     this.hp= stamina*25;
-    this.potion= potion
+    this.potion= potion;
+    this.gold= gold;
     this.level=Math.floor(experience/200);
     this.printStats= function(){
         console.log("Name: " + this.name);
@@ -105,27 +106,27 @@ function characterCreation(){
         switch(answers.profession){
 
             case "Warrior":
-            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 8, 5, 3, 7, 1);
+            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 8, 5, 3, 7, 1, 5);
             break;
 
             case "Druid":
-            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 6, 7, 5, 6, 1);
+            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 6, 7, 5, 6, 1, 5);
             break;
 
             case "Paladin":
-            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 7, 3, 7, 8, 1);
+            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 7, 3, 7, 8, 1, 5);
             break;
 
             case "Hunter":
-            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 4, 7, 3, 8, 1);
+            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 4, 7, 3, 8, 1, 5);
             break;
 
             case "Rogue":
-            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 4, 8, 4, 5, 1);
+            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 4, 8, 4, 5, 1, 5);
             break;
 
             case "Mage":
-            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 1, 3, 10, 4, 2);
+            var newAdventurer = new Character(answers.name, answers.gender, answers.profession, 0, 1, 3, 10, 4, 2, 5);
             break;
         }
 
@@ -135,8 +136,12 @@ function characterCreation(){
 
 // Launches the character creation prompt.
 characterCreation();
-// Create a recursive loop for prompting.
 
+// Create a recursive loop for prompting.
+var promptContinue = true;
+if(promptContinue === true){
+
+}
 // Create switch case inside the recursive loop for class ability choice prompts.
 
 // Create IF statement for deciding when combat is done by either player or opponent death.
