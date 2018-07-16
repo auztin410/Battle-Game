@@ -1,4 +1,5 @@
-function Character(name, profession, gender, experience, strength, agility, intellect, stamina){
+// Creating the character layout for stats and the functions for combat.
+function Character(name, profession, gender, experience, strength, agility, intellect, stamina, potion){
     this.name= name;
     this.profession= profession;
     this.gender= gender;
@@ -8,6 +9,7 @@ function Character(name, profession, gender, experience, strength, agility, inte
     this.intellect= intellect;
     this.stamina= stamina;
     this.hp= stamina*25;
+    this.potion= potion
     this.level=Math.floor(experience/200);
     this.printStats= function(){
         console.log("Name: " + this.name);
@@ -43,20 +45,31 @@ function Character(name, profession, gender, experience, strength, agility, inte
         
         this.printStats();
     }
+    this.usePotion= function(){
+        if(this.potion > 0){
+            this.hp += 50;
+            this.potion -+1;
+            console.log("You use a potion and recover 50 HP, you current HP is " + this.hp) + "You now have " + this.potion + " potions left";
+        }
+        else{
+            console.log("You have no potions to use.");
+            // Need to add the function to recall the action prompts.
+        }
+    }
 }
 
+// Creating the various creatures and opponents.
+var antonath = new Character("Antonath", "Hunter", "Male", 400, 6, 8, 5, 5, 1);
+var tethrin = new Character("Tethrin", "Druid", "Male", 0, 4, 7, 6, 7, 1);
+var goblin = new Character("Goblin", "Skirmisher", "Male", 50, 5, 5, 4, 5, 2, 0);
+var kobold = new Character("Kobold", "Mage", "Male", 50, 2, 3, 8, 1, 0);
+var orc = new Character("Orc", "Warrior", "Male", 100, 8, 5, 3, 5, 0);
+var rogue = new Character("Rogue", "Rogue", "Female", 200, 3, 9, 2, 4, 1);
 
-var antonath = new Character("Antonath", "Hunter", "Male", 400, 6, 8, 5, 5);
-var tethrin = new Character("Tethrin", "Druid", "Male", 0, 4, 7, 6, 7);
 
-
-
+// Printing out stats and testing combat.
 antonath.printStats();
-tethrin.printStats();
-antonath.meleeAttack(tethrin);
-antonath.agileAttack(tethrin);
-antonath.spellAttack(tethrin);
-// tethrin.spellAttack(antonath);
-// tethrin.agileAttack(antonath);
-antonath.levelUp();
-antonath.agileAttack(tethrin);
+goblin.printStats();
+kobold.printStats();
+orc.printStats();
+rogue.printStats();
