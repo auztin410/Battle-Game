@@ -141,6 +141,40 @@ characterCreation();
 var promptContinue = true;
 if(promptContinue === true){
 
+    switch(newAdventurer.profession){
+
+            case "Warrior":
+                inquirer.prompt([
+                    {
+                        name: "action",
+                        type: "list",
+                        choices: ["Strong Attack", "Swift Attack", "Potion"],
+                        message: "What do you want to do?"
+                    }
+                ])
+            break;
+
+            case "Druid":
+            
+            break;
+
+            case "Paladin":
+            
+            break;
+
+            case "Hunter":
+            
+            break;
+
+            case "Rogue":
+            
+            break;
+
+            case "Mage":
+            
+            break;
+
+    }
 }
 // Create switch case inside the recursive loop for class ability choice prompts.
 
