@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/auztin410/Battle-Game/issues"
   },
-  "homepage": "https://github.com/auztin410/Battle-Game#readme"
+  "homepage": "https://github.com/auztin410/Battle-Game#readme",
+  "dependencies": {
+    "inquirer": "^6.0.0"
+  }
 }
