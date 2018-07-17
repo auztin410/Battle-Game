@@ -155,28 +155,63 @@ if(promptContinue === true){
             break;
 
             case "Druid":
-            
+                inquirer.prompt([
+                    {
+                        name: "action",
+                        type: "list",
+                        choices: ["Strong Attack", "Swift Attack,", "Regeneration", "Potion"],
+                        message: "What do you want to do?"
+                    }
+                ])
             break;
 
             case "Paladin":
-            
+                inquirer.prompt([
+                    {
+                        name: "action",
+                        type: "list",
+                        choices: ["Strong Attack", "Swift Attack", "Holy Light", "Potion"],
+                        message: "What do you want to do?"
+                    }
+                ])
             break;
 
             case "Hunter":
-            
+                inquirer.prompt([
+                    {
+                        name: "action",
+                        type: "list",
+                        choices: ["Strong Attack", "Swift Attack", "Range Attack", "Potion"],
+                        message: "What do you want to do?"
+                    }
+                ])
             break;
 
             case "Rogue":
-            
+                inquirer.prompt([
+                    {
+                        name: "action",
+                        type: "list",
+                        choices: ["Strong Attack", "Swift Attack", "Potion"],
+                        message: "What do you want to do?"
+                    }
+                ])
             break;
 
             case "Mage":
-            
+                inquirer.prompt([
+                    {
+                        name: "action",
+                        type: "list",
+                        choices: ["Strong Attack", "Swift Attack", "Spell Attack", "Potion"],
+                        message: "What do you want to do?"
+                    }
+                ])
             break;
 
     }
 }
-// Create switch case inside the recursive loop for class ability choice prompts.
+// Create the recursive loop inside of each class switch.
 
 // Create IF statement for deciding when combat is done by either player or opponent death.
 
